@@ -6,6 +6,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
+    const categorizedPost = path.resolve('./src/templates/categorizedPost.js')
+
     resolve(
       graphql(
         `
@@ -15,6 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   title
                   slug
+                  tags
                 }
               }
             }
@@ -36,6 +39,31 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        const serializeTag = async (posts) => {
+          return posts.map(({ node }) => node.tags)
+        }
+
+        serializeTag(posts)
+          .then(tags => {
+            return tags.filter((value, index) => tags.indexOf(value) === index)
+          })
+          .then(filteredTags => {
+            const concTags = [].concat(...filteredTags)
+            return concTags.filter((value, index) => concTags.indexOf(value) == index)
+          })
+          .then(concTags => {
+            concTags.forEach((tag, index) => {
+              createPage({
+                path: `/categorized-post/${tag}`,
+                component: categorizedPost,
+                context: {
+                  tag: tag
+                }
+              })
+            })
+          })
+
       })
     )
   })
