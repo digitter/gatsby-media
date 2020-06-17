@@ -15,26 +15,27 @@ class RootIndex extends React.Component {
     const tags = get(this, 'props.data.allContentfulBlogPost.edges.node.tags')
 
     return (
-      <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <Hero data={author.node} />
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
+      <React.Fragment>
+        <Layout location={this.props.location}>
+          <Category posts={posts} />
+          <div style={{ background: '#fff' }}>
+            <Helmet title={siteTitle} />
+            <Hero data={author.node} />
+            <div className="wrapper">
+              <h2 className="section-headline">Recent articles</h2>
+              <ul className="article-list">
+                {posts.map(({ node }) => {
+                  return (
+                    <li key={node.slug}>
+                      <ArticlePreview article={node} />
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
           </div>
-        </div>
-
-        <Category posts={posts} />
-      </Layout>
+        </Layout>
+      </React.Fragment>
     )
   }
 }

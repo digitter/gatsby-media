@@ -6,10 +6,10 @@ export default () => (
   <nav role="navigation">
     <ul className={styles.navigation}>
       <li className={styles.navigationItem}>
-        <Link to="/">Home</Link>
+        <Link style={{ textDecoration: 'none' }} to="/">Home</Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">Blog</Link>
+        <Link style={{ textDecoration: 'none' }} to="/blog/">Blog</Link>
       </li>
     </ul>
   </nav>
