@@ -16,6 +16,7 @@ class Template extends React.Component {
 
     return (
       <Container>
+        <h1><strong>Tech Mesia</strong></h1>
         <Navigation />
         {children}
       </Container>
