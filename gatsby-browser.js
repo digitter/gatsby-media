@@ -1,1 +1,2 @@
-require("prismjs/themes/prism-twilight.css")
+// reuire("prismjs/themes/prism-twilight.css")
+require("./customPrism.css")
