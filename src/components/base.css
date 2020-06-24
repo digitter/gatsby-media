@@ -28,6 +28,10 @@ h3 {
   font-weight: weight;
 }
 
+h2 {
+  margin-top: 3em;
+}
+
 a {
   color: currentColor;
 }
