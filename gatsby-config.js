@@ -73,5 +73,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "@weknow/gatsby-remark-twitter",
+            options: {
+              debug: true,
+              theme: 'dark'
+            }
+          }
+        ]
+      }
+    },
   ],
 }
