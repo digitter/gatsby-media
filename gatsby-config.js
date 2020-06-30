@@ -80,7 +80,8 @@ module.exports = {
           {
             resolve: "@weknow/gatsby-remark-twitter",
             options: {
-              debug: true
+              debug: true,
+              theme: 'dark'
             }
           }
         ]
