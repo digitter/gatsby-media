@@ -71,6 +71,7 @@
     "heroku-postbuild": "gatsby build",
     "cleanup-repository": "yarn remove contentful-import chalk inquirer && node ./bin/cleanup.js && rimraf bin contentful",
     "clean": "gatsby clean",
-    "recache": "rm -rf .cache"
+    "recache": "rm -rf .cache",
+    "refresh": "curl -X POST http://localhost:8000/__refresh"
   }
 }
