@@ -12,17 +12,26 @@ export default ({ posts }) => {
   const iconStyle = { paddingRight: 20, fontSize: 20 };
 
   return (
-    <React.Fragment>
-      <div style={{ maxWidth: 800, margin: '0 auto'}}>
-        <FontAwesomeIcon style={iconStyle} icon={faTags} />
+    <div
+      style={{
+        background: 'white',
+        padding: 15,
+        display: 'flex',
+        flexGrow: 1,
+        flexDirection: 'column',
+      }}
+    >
+      <h2>Category <FontAwesomeIcon style={iconStyle} icon={faTags} /></h2>
+
+      <div>
         {
           concTags && uniq(concTags).map(tag => (
-            <p className={styles.tag} key={tag}>
-              <Link style={{ textDecoration: 'none' }} to={`/categorized-post/${tag}`}>{tag}</Link>
-            </p>
+            <div>
+              <Link className={styles.tag} style={{ textDecoration: 'none' }} to={`/categorized-post/${tag}`}>{tag}</Link>
+            </div>
           ))
         }
       </div>
-    </React.Fragment>
+  </div>
   )
 }
