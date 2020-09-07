@@ -6,6 +6,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Category from '../components/category'
+import Navigation from '../components/navigation'
 
 class RootIndex extends React.Component {
   render() {
@@ -15,22 +16,27 @@ class RootIndex extends React.Component {
 
     return (
       <React.Fragment>
+        <Navigation />
+        <Helmet title={siteTitle} />
+        <Hero data={author.node} />
+
         <Layout location={this.props.location}>
-          <Category posts={posts} />
-          <div style={{ background: '#fff' }}>
-            <Helmet title={siteTitle} />
-            <Hero data={author.node} />
-            <div className="wrapper">
-              <h2 className="section-headline">Recent articles</h2>
-              <ul className="article-list">
-                {posts.map(({ node }) => {
-                  return (
-                    <li key={node.slug}>
-                      <ArticlePreview article={node} />
-                    </li>
-                  )
-                })}
-              </ul>
+          <div style={{display: 'flex'}}>
+            <Category posts={posts} />
+
+            <div style={{ background: '#fff', flexGrow: '5' }}>
+              <div className="wrapper">
+                <h2 className="section-headline">Recent articles</h2>
+                <ul className="article-list">
+                  {posts.map(({ node }) => {
+                    return (
+                      <li key={node.slug}>
+                        <ArticlePreview article={node} />
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </Layout>
