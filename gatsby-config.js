@@ -48,35 +48,8 @@ module.exports = {
               aliases: {},
               showLineNumbers: true,
               noInlineHighlight: false,
-              languageExtensions: [
-                {
-                  language: "superscript",
-                  extend: "javascript",
-                  definition: {
-                    superscript_types: /(SuperType)/,
-                  },
-                  insertBefore: {
-                    function: {
-                      superscript_keywords: /(superif|superelse)/,
-                    },
-                  },
-                },
-              ],
-              prompt: {
-                user: "root",
-                host: "localhost",
-                global: false,
-              },
-              escapeEntities: {},
             },
           },
-        ],
-      },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
           {
             resolve: "@weknow/gatsby-remark-twitter",
             options: {
@@ -84,8 +57,8 @@ module.exports = {
               theme: 'dark'
             }
           }
-        ]
-      }
+        ],
+      },
     },
   ],
 }
