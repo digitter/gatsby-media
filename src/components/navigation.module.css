@@ -1,3 +1,15 @@
+.header {
+  width: 100%;
+}
+
+.header_wrapper {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navigation {
   display: flex;
   justify-content: center;
