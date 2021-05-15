@@ -5,7 +5,7 @@ import styles from './navigation.module.css'
 export default () => (
   <header className={styles.header}>
     <div className={styles.header_wrapper}>
-      <h1>Tech Mesia</h1>
+      <h1>Tech Boyaki</h1>
       <nav role="navigation">
         <ul className={styles.navigation}>
           <li className={styles.navigationItem}>
