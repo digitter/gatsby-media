@@ -5,7 +5,12 @@ import styles from './navigation.module.css'
 export default () => (
   <header className={styles.header}>
     <div className={styles.header_wrapper}>
-      <h1>Tech Boyaki</h1>
+      <h1>
+        <Link style={{ textDecoration: 'none' }} to="/">
+          Tech Boyaki
+         </Link>
+      </h1>
+
       <nav role="navigation">
         <ul className={styles.navigation}>
           <li className={styles.navigationItem}>
