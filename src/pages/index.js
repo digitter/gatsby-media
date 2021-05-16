@@ -6,7 +6,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Category from '../components/category'
-import Navigation from '../components/navigation'
+import Header from '../components/header'
 
 class RootIndex extends React.Component {
   render() {
@@ -16,14 +16,14 @@ class RootIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <Navigation />
+        <Header />
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
 
         <Layout location={this.props.location}>
-          <div style={{display: 'flex'}}>
-            <Category posts={posts} />
+          <Category posts={posts} />
 
+          <div style={{display: 'flex'}}>
             <div style={{ background: '#fff', flexGrow: '5' }}>
               <div className="wrapper">
                 <h2 className="section-headline">Recent articles</h2>
