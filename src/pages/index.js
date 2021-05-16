@@ -6,7 +6,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Category from '../components/category'
-import Navigation from '../components/navigation'
+import Header from '../components/header'
 
 class RootIndex extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class RootIndex extends React.Component {
 
     return (
       <React.Fragment>
-        <Navigation />
+        <Header />
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
 
