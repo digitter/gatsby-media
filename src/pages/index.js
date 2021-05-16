@@ -21,9 +21,9 @@ class RootIndex extends React.Component {
         <Hero data={author.node} />
 
         <Layout location={this.props.location}>
-          <div style={{display: 'flex'}}>
-            <Category posts={posts} />
+          <Category posts={posts} />
 
+          <div style={{display: 'flex'}}>
             <div style={{ background: '#fff', flexGrow: '5' }}>
               <div className="wrapper">
                 <h2 className="section-headline">Recent articles</h2>

@@ -8,8 +8,9 @@
   font-size: bold;
   display: inline-block;
   padding: .33333rem .5rem;
+  margin-right: 3px;
+  margin-bottom: .5em;
   line-height: 1;
   border-radius: 5px;
   border: 1px solid #A0A0A0;
-  margin-bottom: .5em;
 }

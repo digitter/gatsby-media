@@ -21,17 +21,20 @@ export default ({ posts }) => {
         flexDirection: 'column',
       }}
     >
-      <h2>Category <FontAwesomeIcon style={iconStyle} icon={faTags} /></h2>
 
-      <div>
-        {
-          concTags && uniq(concTags).map(tag => (
-            <div>
-              <Link className={styles.tag} style={{ textDecoration: 'none' }} to={`/categorized-post/${tag}`}>{tag}</Link>
-            </div>
-          ))
-        }
-      </div>
+    <div>
+      <strong>Category</strong> <FontAwesomeIcon style={iconStyle} icon={faTags} />
+
+      {concTags && uniq(concTags).map(tag => (
+        <Link
+          className={styles.tag}
+          style={{ textDecoration: 'none' }}
+          to={`/categorized-post/${tag}`}
+          >
+            {tag}
+        </Link>
+        ))}
+    </div>
   </div>
   )
 }
