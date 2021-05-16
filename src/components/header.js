@@ -19,6 +19,9 @@ export default () => (
           <li className={styles.navigationItem}>
             <Link style={{ textDecoration: 'none' }} to="/blog/">Blog</Link>
           </li>
+          <li className={styles.navigationItem}>
+            <Link style={{ textDecoration: 'none' }} to="/about/">About</Link>
+          </li>
         </ul>
       </nav>
     </div>
