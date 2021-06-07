@@ -41,6 +41,7 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-autolink-headers`,
+          `@pauliescanlon/gatsby-remark-sticky-table`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
